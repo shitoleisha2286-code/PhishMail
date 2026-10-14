@@ -3,9 +3,7 @@ import html
 import streamlit as st
 from analyzer import analyze_email
 
-# =========================================================
-# PAGE CONFIGURATION
-# =========================================================
+
 
 st.set_page_config(
     page_title="PhishMail | Email Security Analyzer",
@@ -14,9 +12,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# =========================================================
-# CUSTOM STYLING
-# =========================================================
+
 
 st.markdown(
     """
@@ -270,10 +266,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# =========================================================
-# HERO SECTION
-# All branding elements are inside one compact card.
-# =========================================================
+
 
 st.markdown(
     """
@@ -292,9 +285,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# =========================================================
-# EMAIL INPUT SECTION
-# =========================================================
+
 
 st.markdown(
     '<div class="section-heading">Analyze an email</div>',
@@ -330,9 +321,6 @@ with st.form("email_analysis_form"):
 
     submitted = st.form_submit_button("Analyze Email")
 
-# =========================================================
-# ANALYSIS AND RESULTS
-# =========================================================
 
 if submitted:
     if not subject.strip() and not message.strip():
@@ -509,9 +497,6 @@ if submitted:
             with st.expander("Technical details"):
                 st.code(str(error))
 
-# =========================================================
-# FOOTER
-# =========================================================
 
 st.markdown(
     """
